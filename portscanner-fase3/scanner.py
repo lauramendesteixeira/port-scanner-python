@@ -1,9 +1,3 @@
-"""
-PORT SCANNER - SENAI
-FASE 3 - Scanner Avançado com Multithreading e Banner Grabbing
-Autores: Laura Mendes Teixeira e Joy Gabriella Sanchez da Silva
-"""
-
 import socket
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
@@ -264,7 +258,7 @@ class PortScannerGUI:
         self.result_text.tag_config("title", foreground=self.accent_color, font=("Consolas", 11, "bold"))
         
         # Status
-        self.status_label = tk.Label(self.root, text="✅ Pronto para escanear...",
+        self.status_label = tk.Label(self.root, text="Pronto para escanear...",
                                     bg=self.bg_color, fg=self.fg_color,
                                     font=("Arial", 9), anchor=tk.W,
                                     padx=20, pady=5)
@@ -318,7 +312,7 @@ class PortScannerGUI:
             if capture_banner:
                 banner = self.grab_banner(host, port, timeout)
                 if banner:
-                    self.log_message(f"   📋 Banner: {banner}", "info")
+                    self.log_message(f"   Banner: {banner}", "info")
             return True
         else:
             self.log_message(f"[-] PORTA {port} FECHADA ou FILTRADA", "error")
@@ -413,7 +407,7 @@ class PortScannerGUI:
             if self.portas_abertas:
                 self.log_message("\n--- PORTAS ABERTAS ENCONTRADAS ---", "success")
                 for p in self.portas_abertas:
-                    critico = "⚠️ " if p['servico'] == "BACKDOOR!" else "  "
+                    critico = "" if p['servico'] == "BACKDOOR!" else "  "
                     self.log_message(f"  {critico} Porta {p['porta']:5d} : {p['servico']}", 
                                    "backdoor" if p['servico'] == "BACKDOOR!" else "success")
                     if p.get('banner'):
@@ -422,7 +416,7 @@ class PortScannerGUI:
                 self.log_message("\n[!] Nenhuma porta aberta encontrada.", "warning")
             
             self.log_message("=" * 70, "title")
-            self.status_label.config(text="✅ Scan finalizado com sucesso!")
+            self.status_label.config(text="Scan finalizado com sucesso!")
             
         except socket.gaierror:
             self.log_message(f"[ERRO] Host '{host}' não encontrado ou inválido", "error")
@@ -472,7 +466,7 @@ class PortScannerGUI:
         self.progress_bar.pack(pady=5)
         self.progress_bar['value'] = 0
         
-        self.status_label.config(text="🔄 Escaneando portas...")
+        self.status_label.config(text="Escaneando portas...")
         
         self.scan_thread = threading.Thread(
             target=self.run_scan,
@@ -483,7 +477,7 @@ class PortScannerGUI:
     
     def stop_scan(self):
         self.is_scanning = False
-        self.status_label.config(text="⏹️ Parando scan...")
+        self.status_label.config(text="Parando scan...")
         self.log_message("\n[!] Solicitando parada do scan...", "warning")
     
     def scan_complete(self):
