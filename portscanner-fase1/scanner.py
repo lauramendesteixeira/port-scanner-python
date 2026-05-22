@@ -1,9 +1,3 @@
-"""
-PORT SCANNER - SENAI
-FASE 1 - Scanner de porta única
-Autores: Laura Mendes Teixeira e Joy Gabriella Sanchez da Silva
-"""
-
 import socket
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -159,7 +153,7 @@ class PortScannerGUI:
         
         # Status bar
         self.status_label = tk.Label(self.root, 
-                                    text="✅ Pronto para escanear...",
+                                    text="Pronto para escanear...",
                                     bg=self.bg_color,
                                     fg=self.fg_color,
                                     font=("Arial", 9),
@@ -230,7 +224,7 @@ class PortScannerGUI:
             self.scan_button.config(state=tk.NORMAL, text="INICIAR SCAN")
             self.progress.stop()
             self.progress.pack_forget()
-            self.status_label.config(text="✅ Scan finalizado!")
+            self.status_label.config(text="Scan finalizado!")
             
     def start_scan(self):
         """Iniciar o processo de scan"""
@@ -262,7 +256,7 @@ class PortScannerGUI:
         self.scan_button.config(state=tk.DISABLED, text="ESCANEANDO...")
         self.progress.pack(fill=tk.X, pady=(0, 10))
         self.progress.start(10)
-        self.status_label.config(text="🔄 Escaneando...")
+        self.status_label.config(text="Escaneando...")
         
         # Iniciar thread para não travar a interface
         scan_thread = threading.Thread(
