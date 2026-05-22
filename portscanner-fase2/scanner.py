@@ -1,9 +1,3 @@
-"""
-PORT SCANNER - SENAI
-FASE 2: Scanner de range de portas com medição de tempo
-Autores: Laura Mendes Teixeira e Joy Gabriella Sanchez da Silva
-"""
-
 import socket
 import tkinter as tk
 from tkinter import ttk, messagebox
