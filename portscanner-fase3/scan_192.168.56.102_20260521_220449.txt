@@ -1,0 +1,24 @@
+======================================================================
+RELATORIO DE VARREDURA DE PORTAS - SENAI
+======================================================================
+Data/Hora:     2026-05-21 22:04:49
+Alvo:          192.168.56.102
+Range:         1 - 200
+Portas abertas: 8
+Tempo total:   3.05 segundos
+======================================================================
+
+PORTAS ABERTAS ENCONTRADAS:
+----------------------------------------------------------------------
+Porta 25: SMTP
+  Banner: 220 metasploitable.localdomain ESMTP Pos
+Porta 22: SSH
+  Banner: SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1
+Porta 21: FTP
+  Banner: 220 (vsFTPd 2.3.4)
+Porta 23: TELNET
+  Banner:  #'
+Porta 80: HTTP
+Porta 53: DNS
+Porta 111: RPC
+Porta 139: NETBIOS-SSN
